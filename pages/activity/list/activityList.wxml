@@ -1,2 +1,10 @@
-<!--pages/activity/list/activityList.wxml-->
-<text>pages/activity/list/activityList.wxml</text>
+<view class="topBtnGroup">
+  <view class="item">
+    <view>状态</view>
+    <image src="../../../images/down.png"></image>
+  </view>
+  <view class="item">
+    <view>地点</view>
+    <image src="../../../images/down.png"></image>
+  </view>
+</view>
