@@ -1,0 +1,85 @@
+<image class="mainImage" src="{{ data.mainImage }}" />
+
+<view class="plane">
+  <view class="titleWrapper">
+    <view class="title">{{ data.title }}</view>
+  </view>
+  <view class="infoWrapper">
+    <view class="viewNum">
+      <image src="../../../images/liulan.png" />
+      <view class="num">1124</view>
+    </view>
+    <view class="stateStr success">报名中</view>
+  </view>
+</view>
+
+<view style="width:100%; height:2rpx;"></view>
+
+<view class="plane">
+  <view class="detailWrapper">
+    <view class="item">
+      <image class="left" src="../../../images/shijian.png" />
+      <view>报名：01/02 08:00 - 01/03 12:00</view>
+    </view>
+    <view class="spliter"></view>
+    <view class="item">
+      <image class="left" src="../../../images/didian.png" />
+      <view>地点：江门市蓬江区嘉福花园</view>
+      <image class="right" src="../../../images/you.png"></image>
+    </view>
+    <view class="spliter"></view>
+    <view class="item">
+      <image class="left" src="../../../images/dianhua.png" />
+      <view>联系电话：13777777777</view>
+      <image class="right" src="../../../images/you.png"></image>
+    </view>
+  </view>
+</view>
+
+<view style="width:100%; height:20rpx;"></view>
+
+<view class="plane">
+  <view class="businessCard">
+    <image class="businessLogo" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578117350788&di=cf8bfe3a2baf71fa3b5b3418d80a9f97&imgtype=0&src=http%3A%2F%2Fd.ifengimg.com%2Fw600%2Fp0.ifengimg.com%2Fpmop%2F2018%2F0406%2FB6EBEFEB3603EE41D1AD687F6AFB01376C2B4C28_size19_w640_h640.jpeg"></image>
+    <view class="businessInfoWrapper">
+      <view class="businessName">商户名称商户名称商户</view>
+      <view class="activityNum">
+        <image src="../../../images/biaoqian.png"></image>
+        <view>活动数： 5</view>
+      </view>
+    </view>
+  </view>
+  <view class="buttonWrapper">
+    <view class="button">查看主页</view>
+  </view>
+  <view class="tipWrapper">
+    <image src="../../../images/xinxi.png"></image>
+    <view class="tip">温馨提示：本活动使用网易江门官方报名通道，报名成功后可在"我的"->"参与的活动"中查看</view>
+  </view>
+</view>
+
+<view class="footer">
+  <view class="sbtn">
+    <view class="icon">
+      <image src="../../../images/fenxiang.png"></image>
+    </view>
+    <view class="label">分享</view>
+  </view>
+  <view class="sbtn">
+    <view class="icon"> 
+      <image src="../../../images/shoucang-dark.png"></image>
+    </view>
+    <view class="label">收藏</view>
+  </view>
+  <view class="lbtn">
+    <view>立即报名</view>
+  </view>
+</view>
+
+<view class="activityDetailStr">———— 活动详情 ————</view>
+
+<view class="activetyImages">
+  <image mode="widthFix" src="https://hbimg.huabanimg.com/5ca7b9bbcdac87317bd526d636e774fe8301373e13e26a-v7MzFz_fw658"></image>
+</view>
+
+<view style="width:100%; height:120rpx;"></view>

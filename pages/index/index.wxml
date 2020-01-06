@@ -1,0 +1,65 @@
+<view class="swiper">
+  <swiper indicator-dots="" autoplay="true" duration="1000" interval="3000" 
+  indicator-active-color="#007aff" bindchange="bindchange" circular="true" style=""
+  previous-margin="0rpx" next-margin="0rpx">
+      <block wx:for="{{data.images}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="image">
+          <swiper-item style="padding: 0">
+              <image src="{{image.url}}" data-id="{{index}}" class="slide-image" mode="widthFix" bindload="imageLoad" />
+          </swiper-item>
+        </block>
+   </swiper>
+</view>
+
+<view class="plane">
+  <view class="header" bindtap="bindAllRecommendation">
+    <view class="label">推荐活动</view>
+    <image src="../../images/you.png" />
+  </view>
+  <view class="main">
+    <view class="item" wx:for="{{data.recommendationList}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="recommendation"
+          data-index="{{ recommendation.id }}"
+          bindtap="bindRecommendationTap">
+      <image class="mainImage" src="{{ recommendation.mainImage }}"></image>
+      <view class="titleWrapper">
+        <view class="title">{{ recommendation.title }}</view>
+      </view>
+      <view class="info">
+        <view class="date">{{ recommendation.date }}</view>
+        <view class="position">{{ recommendation.position }}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="plane">
+  <view class="header">
+    <view class="label">往期回顾</view>
+    <image src="../../images/you.png" />
+  </view>
+  <view class="main">
+    <view class="item" wx:for="{{data.historyList}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="history"
+          data-index="{{ history.id }}">
+      <image class="mainImage" src="{{ history.mainImage }}"></image>
+      <view class="titleWrapper">
+        <view class="title">{{ history.title }}</view>
+      </view>
+      <view class="info">
+        <view class="date">活动人数：{{ history.num }}</view>
+        <view class="position">{{ history.position }}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="plane">
+  <view class="header">
+    <view class="label">合作商家</view>
+  </view>
+  <view class="businessMain">
+    <view class="businessItem" wx:for="{{data.businessList}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="business"
+          data-index="{{ business.id }}">
+      <image src="{{ business.logo }}"></image>
+    </view>
+  </view>
+  
+</view>

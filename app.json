@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/activity/detail/activityDetail",
+    "pages/activity/list/activityList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "江门网易",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "8a8a8a",
+    "selectedColor": "#55C58B",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "活动",
+        "iconPath": "images/tab/index-dark.png",
+        "selectedIconPath": "images/tab/index-light.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/tab/mine-dark.png",
+        "selectedIconPath": "images/tab/mine-light.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
