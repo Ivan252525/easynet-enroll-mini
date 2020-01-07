@@ -1,2 +1,39 @@
-<!--pages/activity/enroll/enroll.wxml-->
-<text>pages/activity/enroll/enroll.wxml</text>
+<view class="container">
+  <view class="inputList">
+    <view class="inputItem" wx:for="{{data.form}}" wx:key="key" wx:for-key="{{formItemIndex}}" wx:for-item="formItem">
+      <view class="labelWrapper">
+        <view class="label">{{formItem.label}}</view>
+        <view class="must" style="{{formItem.must == 1? '' : 'color: white'}}">*</view>
+      </view>
+
+      <!-- 输入框 -->
+      <input wx:if="{{formItem.type == 1}}" data-formItemId="{{formItem.formItemId}}" class="input" bindinput="bindInput"></input>
+
+      <!-- 单选框 -->
+      <radio-group class="input" bindchange="bindRadioChange" wx:if="{{formItem.type == 2}}" data-formItemId="{{formItem.formItemId}}">
+        <radio value="{{option}}" wx:for="{{formItem.options}}" wx:key="key" wx:for-key="{{formItemOptionIndex}}" wx:for-item="option">
+          <text>{{option}}</text>
+        </radio>
+      </radio-group>
+
+      <!-- 单列下拉 -->
+      <view class="input" wx:if="{{formItem.type == 3}}">
+        <picker data-formItemId="{{formItem.formItemId}}" bindchange="bindPickerChange" value="{{selectIndex[formItem.formItemId + '']}}" range="{{formItem.options}}">
+          <view data-value="{{formItem.options[selectIndex[formItem.formItemId + '']]}}">{{formItem.options[selectIndex[formItem.formItemId + '']]}}</view>
+        </picker>
+      </view>
+
+      <!-- 多选 -->
+      <checkbox-group data-formItemId="{{formItem.formItemId}}" bindchange="bindCheckboxChange" wx:if="{{formItem.type == 4}}">
+        <label class="checkbox" wx:for="{{formItem.options}}" wx:key="key" wx:for-key="{{formItemOptionIndex}}" wx:for-item="option">
+          <checkbox value="{{option}}" />{{option}}
+        </label>
+      </checkbox-group>
+
+      <view class="spliter"></view>
+    </view>
+  </view>
+  <view class="btnWrapper">
+    <view class="btn" bindtap="bindSaveInput">点击提交</view>
+  </view>
+</view>
