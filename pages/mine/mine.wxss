@@ -1,1 +1,75 @@
-/* pages/mine/mine.wxss */
+Page {
+  padding: 20rpx;
+}
+
+.container {
+  width: 710rpx;
+  background-color: white;
+  border-radius: 10rpx;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  padding-left: 90rpx;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+.userInfo .logo {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.userInfo .username {
+  font-size: 30rpx;
+  margin-left: 30rpx;
+}
+.btnGroup {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40rpx;
+}
+.btnGroup .spliter {
+  width: 2rpx;
+  height: 80rpx;
+  background-color: #eee;
+  margin-left: 120rpx;
+  margin-right: 120rpx;
+}
+.btnGroup .btnItem {
+  text-align: center;
+}
+.btnGroup .btnItem .num {
+  font-size: 40rpx;
+  margin-bottom: 10rpx;
+}
+.btnGroup .btnItem .label {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.tapItem {
+  display: flex;
+  align-items: center;
+  height: 140rpx;
+  width: 670rpx;
+  margin-left: 20rpx;
+}
+.tapItem .label {
+  color: #515151;
+  font-size: 32rpx;
+}
+.tapItem .arrowIcon {
+  width: 34rpx;
+  height: 34rpx;
+  position: absolute;
+  right: 40rpx;
+}
+.tapItemSpliter {
+  width: 670rpx;
+  height: 1rpx;
+  background-color: #eee;
+  margin-left: 20rpx;
+}

@@ -1,4 +1,4 @@
-// pages/mine/mine.js
+// pages/activity/enroll/enroll.js
 Page({
 
   /**
@@ -6,17 +6,6 @@ Page({
    */
   data: {
 
-  },
-
-  tapLike: function () {
-    wx.navigateTo({
-      url: 'like/like',
-    })
-  },
-  tapCollection: function () {
-    wx.navigateTo({
-      url: 'collection/collection',
-    })
   },
 
   /**

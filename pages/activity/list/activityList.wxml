@@ -1,10 +1,118 @@
 <view class="topBtnGroup">
-  <view class="item">
-    <view>状态</view>
-    <image src="../../../images/down.png"></image>
+  <view class="item" bindtap="bindChoiceState">
+    <view style="{{choiceState?'color:#55C58B':''}}">{{ stateStr }}</view>
+    <image src="{{choiceState?'../../../images/up.png':'../../../images/down.png'}}"></image>
   </view>
-  <view class="item">
-    <view>地点</view>
-    <image src="../../../images/down.png"></image>
+  <view class="item" bindtap="bindChoicePosition">
+    <view style="{{choicePosition?'color:#55C58B':''}}">{{ positionStr }}</view>
+    <image src="{{choicePosition?'../../../images/up.png':'../../../images/down.png'}}"></image>
   </view>
 </view>
+
+<view class="mask" style='{{showMask ? "" : "display: none"}}'>
+  <view class="optionPlane stateOptionPlane" style="{{choiceState ? '' : 'display: none'}}">
+    <view class="option" data-index="0" bindtap="bindTapState">
+      <view class="imageWrapper">
+        <image src="../../../images/gou.png" style="{{stateOptionIndex == 0 ? '' : 'display: none'}}"></image>
+      </view>
+      <view class="label" style="{{stateOptionIndex == 0 ? 'color: #55C58B' : ''}}">全部</view>
+    </view>
+    <view class="spliter"></view>
+    <view class="option" data-index="1" bindtap="bindTapState">
+      <view class="imageWrapper">
+        <image src="../../../images/gou.png" style="{{stateOptionIndex == 1 ? '' : 'display: none'}}"></image>
+      </view>
+      <view class="label" style="{{stateOptionIndex == 1 ? 'color: #55C58B' : ''}}">报名中</view>
+    </view>
+    <view class="spliter"></view>
+    <view class="option" data-index="2" bindtap="bindTapState">
+      <view class="imageWrapper">
+        <image src="../../../images/gou.png" style="{{stateOptionIndex == 2 ? '' : 'display: none'}}"></image>
+      </view>
+      <view class="label" style="{{stateOptionIndex == 2 ? 'color: #55C58B' : ''}}">即将开始</view>
+    </view>
+    <view class="spliter"></view>
+    <view class="option" data-index="3" bindtap="bindTapState">
+      <view class="imageWrapper">
+        <image src="../../../images/gou.png" style="{{stateOptionIndex == 3 ? '' : 'display: none'}}"></image>
+      </view>
+      <view class="label" style="{{stateOptionIndex == 3 ? 'color: #55C58B' : ''}}">报名结束</view>
+    </view>
+  </view>
+
+  <view class="optionPlane positionOptionPlane" style="{{choicePosition ? '' : 'display: none'}}">
+    <view class="option" data-index="0" bindtap="bindTapPosition">
+      <view class="imageWrapper">
+        <image src="../../../images/gou.png" style="{{positionOptionIndex == 0 ? '' : 'display: none'}}"></image>
+      </view>
+      <view class="label" style="{{positionOptionIndex == 0 ? 'color: #55C58B' : ''}}">全部</view>
+    </view>
+    <view class="spliter"></view>
+    <view class="option" data-index="1" bindtap="bindTapPosition">
+      <view class="imageWrapper">
+        <image src="../../../images/gou.png" style="{{positionOptionIndex == 1 ? '' : 'display: none'}}"></image>
+      </view>
+      <view class="label" style="{{positionOptionIndex == 1 ? 'color: #55C58B' : ''}}">蓬江区</view>
+    </view>
+    <view class="spliter"></view>
+    <view class="option" data-index="2" bindtap="bindTapPosition">
+      <view class="imageWrapper">
+        <image src="../../../images/gou.png" style="{{positionOptionIndex == 2 ? '' : 'display: none'}}"></image>
+      </view>
+      <view class="label" style="{{positionOptionIndex == 2 ? 'color: #55C58B' : ''}}">江海区</view>
+    </view>
+    <view class="spliter"></view>
+    <view class="option" data-index="3" bindtap="bindTapPosition">
+      <view class="imageWrapper">
+        <image src="../../../images/gou.png" style="{{positionOptionIndex == 3 ? '' : 'display: none'}}"></image>
+      </view>
+      <view class="label" style="{{positionOptionIndex == 3 ? 'color: #55C58B' : ''}}">新会区</view>
+    </view>
+    <view class="spliter"></view>
+    <view class="option" data-index="4" bindtap="bindTapPosition">
+      <view class="imageWrapper">
+        <image src="../../../images/gou.png" style="{{positionOptionIndex == 4 ? '' : 'display: none'}}"></image>
+      </view>
+      <view class="label" style="{{positionOptionIndex == 4 ? 'color: #55C58B' : ''}}">开平市</view>
+    </view>
+    <view class="spliter"></view>
+    <view class="option" data-index="5" bindtap="bindTapPosition">
+      <view class="imageWrapper">
+        <image src="../../../images/gou.png" style="{{positionOptionIndex == 5 ? '' : 'display: none'}}"></image>
+      </view>
+      <view class="label" style="{{positionOptionIndex == 5 ? 'color: #55C58B' : ''}}">恩平市</view>
+    </view>
+    <view class="spliter"></view>
+    <view class="option" data-index="6" bindtap="bindTapPosition">
+      <view class="imageWrapper">
+        <image src="../../../images/gou.png" style="{{positionOptionIndex == 6 ? '' : 'display: none'}}"></image>
+      </view>
+      <view class="label" style="{{positionOptionIndex == 6 ? 'color: #55C58B' : ''}}">台山市</view>
+    </view>
+    <view class="spliter"></view>
+    <view class="option" data-index="7" bindtap="bindTapPosition">
+      <view class="imageWrapper">
+        <image src="../../../images/gou.png" style="{{positionOptionIndex == 7 ? '' : 'display: none'}}"></image>
+      </view>
+      <view class="label" style="{{positionOptionIndex == 7 ? 'color: #55C58B' : ''}}">鹤山市</view>
+    </view>
+    <view class="spliter"></view>
+  </view>
+</view>
+
+<view class="activityList">
+  <view class="item" wx:for="{{data.activityList}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="activity"
+        data-index="{{ activity.id }}"
+        bindtap="bindActivityTap">
+    <image class="mainImage" src="{{ activity.mainImage }}"></image>
+    <view class="titleWrapper">
+      <view class="title">{{ activity.title }}</view>
+    </view>
+    <view class="info">
+      <view class="date">{{ activity.date }}</view>
+      <view class="position">{{ activity.position }}</view>
+    </view>
+  </view>
+</view>
+
+<view style="height: 80rpx;"></view>

@@ -1,14 +1,13 @@
-<view class="swiper">
-  <swiper indicator-dots="" autoplay="true" duration="1000" interval="3000" 
-  indicator-active-color="#007aff" bindchange="bindchange" circular="true" style=""
-  previous-margin="0rpx" next-margin="0rpx">
-      <block wx:for="{{data.images}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="image">
-          <swiper-item style="padding: 0">
-              <image src="{{image.url}}" data-id="{{index}}" class="slide-image" mode="widthFix" bindload="imageLoad" />
-          </swiper-item>
-        </block>
-   </swiper>
-</view>
+<swiper
+  indicator-dots="true" autoplay="true" circular="true"
+  interval="3000" duration="500"
+  class='bannerWrapper'>
+  <block wx:for="{{data.banner}}" wx:key="*this">
+    <swiper-item>
+      <image class='banner' src='{{item.url}}'></image>
+    </swiper-item>
+  </block>
+</swiper>
 
 <view class="plane">
   <view class="header" bindtap="bindAllRecommendation">
@@ -31,7 +30,7 @@
   </view>
 </view>
 
-<view class="plane">
+<!-- <view class="plane">
   <view class="header">
     <view class="label">往期回顾</view>
     <image src="../../images/you.png" />
@@ -49,7 +48,7 @@
       </view>
     </view>
   </view>
-</view>
+</view> -->
 
 <view class="plane">
   <view class="header">
@@ -57,7 +56,8 @@
   </view>
   <view class="businessMain">
     <view class="businessItem" wx:for="{{data.businessList}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="business"
-          data-index="{{ business.id }}">
+          data-index="{{ business.id }}"
+          bindtap="bindTapBusiness">
       <image src="{{ business.logo }}"></image>
     </view>
   </view>

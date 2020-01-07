@@ -1,0 +1,39 @@
+.businessCard {
+  width: 710rpx;
+  margin-left: 20rpx;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+.businessCard .businessLogo {
+  width: 160rpx;
+  height: 160rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+.businessCard .businessInfoWrapper .businessName {
+  letter-spacing: 2rpx;
+  font-size: 34rpx;
+  margin-bottom: 15rpx;
+}
+.businessCard .businessInfoWrapper .activityNum {
+  display: flex;
+  align-items: center;
+}
+.businessCard .businessInfoWrapper .activityNum image {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
+}
+.businessCard .businessInfoWrapper .activityNum view {
+  color: #8a8a8a;
+  font-size: 26rpx;
+}
+.businessCard .arrowIcon {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 40rpx;
+}

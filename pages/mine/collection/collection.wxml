@@ -1,0 +1,16 @@
+<view class="activityList">
+  <view class="item" wx:for="{{data.activityList}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="activity"
+        data-index="{{ activity.id }}"
+        bindtap="bindActivityTap">
+    <image class="mainImage" src="{{ activity.mainImage }}"></image>
+    <view class="titleWrapper">
+      <view class="title">{{ activity.title }}</view>
+    </view>
+    <view class="info">
+      <view class="date">{{ activity.date }}</view>
+      <view class="position">{{ activity.position }}</view>
+    </view>
+  </view>
+</view>
+
+<view style="height: 80rpx;"></view>

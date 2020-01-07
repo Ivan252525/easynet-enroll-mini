@@ -5,7 +5,7 @@ const app = getApp()
 Page({
   data: {
     data: {
-      images: [
+      banner: [
         {
           url: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578114915975&di=db91695a9b5ce51f8ac71c701785fda9&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01af5f58258bb6a84a0e282b7e9d53.jpg%401280w_1l_2o_100sh.jpg",
         },
@@ -109,6 +109,13 @@ Page({
     let activityId = e.currentTarget.dataset.index;
     wx.navigateTo({
       url: '../activity/detail/activityDetail?activityId=' + activityId
+    })
+  },
+
+  bindTapBusiness: function (e) {
+    let bussinessId = e.currentTarget.dataset.index;
+    wx.navigateTo({
+      url: '../business/business?id=' + bussinessId
     })
   },
 

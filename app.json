@@ -4,7 +4,11 @@
     "pages/logs/logs",
     "pages/mine/mine",
     "pages/activity/detail/activityDetail",
-    "pages/activity/list/activityList"
+    "pages/activity/list/activityList",
+    "pages/business/business",
+    "pages/mine/like/like",
+    "pages/mine/collection/collection",
+    "pages/activity/enroll/enroll"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,7 +17,7 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "8a8a8a",
+    "color": "#8a8a8a",
     "selectedColor": "#55C58B",
     "list": [
       {

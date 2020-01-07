@@ -1,0 +1,42 @@
+<view class="plane">
+  <view class="infoWrapper">
+    <image class="logo" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578117350788&di=cf8bfe3a2baf71fa3b5b3418d80a9f97&imgtype=0&src=http%3A%2F%2Fd.ifengimg.com%2Fw600%2Fp0.ifengimg.com%2Fpmop%2F2018%2F0406%2FB6EBEFEB3603EE41D1AD687F6AFB01376C2B4C28_size19_w640_h640.jpeg"></image>
+    <view class="nameAndFans">
+      <view class="businessName">喜茶喜茶喜茶</view>
+      <view class="fansWrapper">
+        <image class="fansIcon" src="../../images/fensi.png"></image>
+        <view class="fansNum">{{data.likeNum}}人关注</view>
+        <view bindtap="bindTapLike" 
+              class="likeBtn {{data.isLike == 0 ? 'guanzhu' : 'quguan'}}">
+              {{data.isLike == 0 ? '关注' : '取消关注'}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="spliter"></view>
+  <view class="about">商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍</view>
+</view>
+
+<view style="height: 30rpx;"></view>
+
+<view class="plane">
+  <view class="header">
+    商家活动
+  </view>
+  <view class="activityList">
+  <view class="item" wx:for="{{data.activityList}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="activity"
+        data-index="{{ activity.id }}"
+        bindtap="bindActivityTap">
+    <image class="mainImage" src="{{ activity.mainImage }}"></image>
+    <view class="titleWrapper">
+      <view class="title">{{ activity.title }}</view>
+    </view>
+    <view class="info">
+      <view class="date">{{ activity.date }}</view>
+      <view class="position">{{ activity.position }}</view>
+    </view>
+  </view>
+</view>
+</view>
+
+<view style="height: 80rpx;"></view>

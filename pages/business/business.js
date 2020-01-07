@@ -1,20 +1,14 @@
-// pages/activity/list/activityList.js
+// pages/business/business.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    choiceState: false,
-    choicePosition: false,
-    showMask: false,
-    stateOptionIndex: 0,
-    positionOptionIndex: 0,
-    stateStr: "状态",
-    stateStrArr: ['状态', '报名中', '即将开始', '报名结束'],
-    positionStr: "地点",
-    positionStrArr: ['地点', '蓬江区', '江海区', '新会区', '开平市', '恩平市', '台山市', '鹤山市'],
+    id: 0,
     data: {
+      isLike : 0,
+      likeNum: 1200,
       activityList: [
         {
           id: 1,
@@ -90,42 +84,6 @@ Page({
     }
   },
 
-  bindChoiceState: function () {
-    this.setData({
-      choiceState: !this.data.choiceState,
-      choicePosition: false,
-      showMask: !this.data.choiceState,
-    })
-  },
-
-  bindChoicePosition: function () {
-    this.setData({
-      choiceState: false,
-      choicePosition: !this.data.choicePosition,
-      showMask: !this.data.choicePosition,
-    })
-  },
-
-  bindTapState: function (e) {
-    let state = e.currentTarget.dataset.index;
-    this.setData({
-      choiceState: false,
-      showMask: false,
-      stateOptionIndex: state,
-      stateStr: this.data.stateStrArr[state],
-    })
-  },
-
-  bindTapPosition: function (e) {
-    let position = e.currentTarget.dataset.index;
-    this.setData({
-      choicePosition: false,
-      showMask: false,
-      positionOptionIndex: position,
-      positionStr: this.data.positionStrArr[position],
-    })
-  },
-
   bindActivityTap: function (e) {
     let activityId = e.currentTarget.dataset.index;
     wx.navigateTo({
@@ -133,11 +91,40 @@ Page({
     })
   },
 
+  bindTapLike: function (e) {
+    let data = this.data.data;
+    if (this.data.data.isLike == 0) {
+      // 添加关注
+      data.isLike = 1;
+      data.likeNum = data.likeNum + 1;
+      this.setData({
+        data: data
+      })
+    } else {
+      // 取消关注
+      data.isLike = 0;
+      data.likeNum = data.likeNum - 1;
+      this.setData({
+        data: data
+      })
+    }
+  },
+
+  bindActivityTap: function (e) {
+    let activityId = e.currentTarget.dataset.index;
+    wx.navigateTo({
+      url: '../activity/detail/activityDetail?activityId=' + activityId
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      id: options.id,
+    })
+    console.log(this.data.id)
   },
 
   /**
