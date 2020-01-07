@@ -8,7 +8,10 @@
     "pages/business/business",
     "pages/mine/like/like",
     "pages/mine/collection/collection",
-    "pages/activity/enroll/enroll"
+    "pages/activity/enroll/enroll",
+    "pages/activity/success/success",
+    "pages/mine/enrollDetail/enrollDetail",
+    "pages/mine/enrollList/enrollList"
   ],
   "window": {
     "backgroundTextStyle": "light",

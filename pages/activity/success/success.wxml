@@ -1,0 +1,15 @@
+<view class="successIconWrapper">
+  <image src="../../../images/success.png"></image>
+</view>
+
+<view class="title">报名成功</view>
+
+<view class="btnWrapper">
+  <view class="btn" bindtap="bindTapEnrollList">查看我的报名</view>
+</view>
+
+<view class="btnWrapper">
+  <view class="btn" bindtap="bindTapIndex">去首页</view>
+</view>
+
+

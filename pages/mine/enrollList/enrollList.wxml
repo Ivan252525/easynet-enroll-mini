@@ -1,0 +1,17 @@
+<view class="card" wx:for="{{data.enrollList}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="enroll"
+      data-index="{{enroll.id}}"
+      bindtap="bindTapEnrollDetail">
+  <view class="iconWrapper">
+    <image class="logo" src="{{enroll.businessLogo}}"></image>
+    <view class="titleWrapper">
+      <view class="title">{{enroll.activityTitle}}</view>
+      <view class="infoWrapper">
+        <view class="date">{{enroll.date}}</view>
+        <view class="potision">{{enroll.position}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="enrollTime">报名时间：{{enroll.enrollTime}}</view>
+</view>
+
+<view class="height: 80rpx"></view>

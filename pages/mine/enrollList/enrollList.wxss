@@ -1,0 +1,41 @@
+.card {
+  margin: 20rpx;
+  width: 710rpx;
+  background-color: white;
+  border-radius: 15rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  margin-top: 20rpx
+}
+.card .iconWrapper {
+  display: flex;
+  align-items: center;
+  margin: 20rpx;
+}
+.card .iconWrapper .logo {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+}
+.card .iconWrapper .titleWrapper .title {
+  letter-spacing: 1.5rpx;
+  font-size: 32rpx;
+  height: 80rpx;
+  width: 500rpx;
+  margin-bottom: 10rpx;
+}
+.card .iconWrapper .titleWrapper .infoWrapper {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999;
+}
+.card .iconWrapper .titleWrapper .infoWrapper .potision {
+  position: absolute;
+  right: 40rpx;
+}
+.card .enrollTime {
+  margin: 20rpx;
+  font-size: 24rpx;
+  color: #999;
+}

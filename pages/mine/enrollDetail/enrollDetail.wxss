@@ -1,0 +1,58 @@
+.logo {
+  position: fixed;
+  left: 291rpx;
+  top: 50rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border: 18rpx solid white;
+  border-radius: 50%;
+}
+
+.plane {
+  margin: 20rpx;
+  width: 710rpx;
+  background-color: white;
+  margin-top: 125rpx;
+  border-radius: 15rpx;
+  padding-top: 100rpx;
+  padding-bottom: 30rpx;
+}
+.plane .item {
+  height: 100rpx;
+  width: 710rpx;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  color: #515151;
+  padding-left: 20rpx;
+}
+.plane .item .value {
+  position: absolute;
+  right: 40rpx;
+}
+
+.btnWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}
+.btnWrapper .viewBtn {
+  width: 300rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  text-align: center;
+  border: 1rpx solid #fbe868;
+  background-color: #fbe868;
+  border-radius: 50rpx;
+}
+.btnWrapper .cancelBtn {
+  width: 300rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  text-align: center;
+  border: 1rpx solid #999;
+  border-radius: 50rpx;
+  color: #999;
+}

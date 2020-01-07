@@ -134,6 +134,10 @@ Page({
         }
       }
     }
+
+    wx.redirectTo({
+      url: '../success/success',
+    })
   },
 
   /**

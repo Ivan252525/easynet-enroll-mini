@@ -1,4 +1,4 @@
-// pages/mine/mine.js
+// pages/activity/success/success.js
 Page({
 
   /**
@@ -8,19 +8,15 @@ Page({
 
   },
 
-  tapLike: function () {
+  bindTapEnrollList: function () {
     wx.navigateTo({
-      url: 'like/like',
+      url: '../../mine/enrollList/enrollList',
     })
   },
-  tapCollection: function () {
-    wx.navigateTo({
-      url: 'collection/collection',
-    })
-  },
-  tapEnrollList: function () {
-    wx.navigateTo({
-      url: '../mine/enrollList/enrollList',
+
+  bindTapIndex: function () {
+    wx.switchTab({
+      url: "../../index/index",
     })
   },
 

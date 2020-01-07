@@ -1,0 +1,36 @@
+.successIconWrapper {
+  width: 100%;
+  margin-top: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.successIconWrapper image {
+  width: 240rpx;
+  height: 240rpx;
+  margin-bottom: 80rpx;
+}
+.title {
+  width: 100%;
+  font-size: 52rpx;
+  color: #515151;
+  text-align: center;
+  margin-bottom: 300rpx;
+}
+
+.btnWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.btnWrapper .btn {
+  width: 300rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  text-align: center;
+  border: 1rpx solid #999;
+  border-radius: 50rpx;
+  color: #999;
+}

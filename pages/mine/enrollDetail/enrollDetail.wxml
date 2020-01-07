@@ -1,0 +1,22 @@
+
+<image class="logo" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1743471438,2841452186&fm=26&gp=0.jpg"></image>
+
+<view class="plane">  
+  <view class="item">
+    <view class="label">姓名</view>
+    <view class="value">溜溜溜</view>
+  </view>
+  <view class="item">
+    <view class="label">姓名</view>
+    <view class="value">溜溜溜</view>
+  </view>
+
+  <view style="height: 100rpx"></view>
+
+  <view class="btnWrapper">
+    <view class="viewBtn">查看活动</view>
+  </view>
+  <view class="btnWrapper">
+    <view class="cancelBtn">取消报名</view>
+  </view>
+</view>

@@ -19,7 +19,7 @@
 <view style="height: 80rpx;"></view>
 
 <view class="container">
-  <view class="tapItem">
+  <view class="tapItem" bindtap="tapEnrollList">
     <view class="label">我的报名</view>
     <image class="arrowIcon" src="../../images/you.png"></image>
   </view>
