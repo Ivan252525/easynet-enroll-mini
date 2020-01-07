@@ -71,7 +71,7 @@
     </view>
     <view class="label">收藏</view>
   </view>
-  <view class="lbtn">
+  <view class="lbtn" bindtap="bindTapEnroll">
     <view>立即报名</view>
   </view>
 </view>
