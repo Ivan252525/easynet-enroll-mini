@@ -14,7 +14,7 @@
   <view style="height: 100rpx"></view>
 
   <view class="btnWrapper">
-    <view class="viewBtn">查看活动</view>
+    <view class="viewBtn" bindtap="bindTapActivityDetail">查看活动</view>
   </view>
   <view class="btnWrapper">
     <view class="cancelBtn">取消报名</view>
