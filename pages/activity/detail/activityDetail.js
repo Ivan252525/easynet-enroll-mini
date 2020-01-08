@@ -13,6 +13,7 @@ Page({
         enrollNum: 1329,
         activityState: 2,
         activityStateStr: "报名中",
+        activityTime: "01/05 12:00",
         startTime: "01/02 12:00",
         endTime: "02/02 11:00",
         address: "广东省开平市东汇村",

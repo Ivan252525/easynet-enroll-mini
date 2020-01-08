@@ -19,6 +19,10 @@
   <view class="detailWrapper">
     <view class="item">
       <image class="left" src="../../../images/shijian.png" />
+      <view>活动时间：{{data.activityInfo.activityTime}}</view>
+    </view>
+    <view class="item">
+      <image class="left" src="../../../images/shijian.png" />
       <view>报名：{{data.activityInfo.startTime}} - {{data.activityInfo.endTime}}</view>
     </view>
     <view class="spliter"></view>
