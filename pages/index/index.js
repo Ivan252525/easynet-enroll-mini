@@ -119,13 +119,20 @@ Page({
     })
   },
 
-  bindchange: function (e) {
-    // console.log(e.detail.current)
-    // this.setData({
-    //   current: e.detail.current
-    // })
+  login: function () {
+    wx.login({
+      success: (res) => {
+        console.log("登录成功！")
+        console.log(res);
+      },
+      fail: (res) => {
+        console.log("登录失败！")
+        console.log(res);
+      }
+    })
   },
-  onLoad: function() {
 
+  onLoad: function() {
+    this.login();
   }
 })
