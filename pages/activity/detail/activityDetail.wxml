@@ -1,4 +1,4 @@
-<image class="mainImage" src="{{ data.activityInfo.mainImage }}" />
+<image class="mainImage" src="{{ data.activityInfo.banner }}" />
 
 <view class="plane">
   <view class="titleWrapper">

@@ -3,8 +3,8 @@
   interval="3000" duration="500"
   class='bannerWrapper'>
   <block wx:for="{{data.banner}}" wx:key="*this">
-    <swiper-item>
-      <image class='banner' src='{{item.url}}'></image>
+    <swiper-item bindtap="tapBanner" data-index="{{item.id}}">
+      <image class='banner' src='{{item.imageUrl}}'></image>
     </swiper-item>
   </block>
 </swiper>

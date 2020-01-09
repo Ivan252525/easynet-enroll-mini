@@ -1,16 +1,19 @@
 <view class="container">
-  <view class="userInfo">
-    <image class="logo" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578319553029&di=652d7150a0ecd5fe099f953228692425&imgtype=0&src=http%3A%2F%2Fpic3.zhimg.com%2Fv2-c44cb8a33e25cc172d869b2092064940_fhd.jpg"></image>
-    <view class="username">用户名用户名</view>
+  <view class="loginBtnWrapper" wx:if="{{!init}}">
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">请登录</button>
+  </view>
+  <view class="userInfo" wx:if="{{init}}">
+    <image class="logo" src="{{userLogo}}"></image>
+    <view class="username">{{nickname}}</view>
   </view>
   <view class="btnGroup">
     <view class="btnItem" bindtap="tapLike">
-      <view class="num">12</view>
+      <view class="num">{{data.likeNum}}</view>
       <view class="label">我的关注</view>
     </view>
     <view class="spliter"></view>
     <view class="btnItem" bindtap="tapCollection">
-      <view class="num">3</view>
+      <view class="num">{{data.collectNum}}</view>
       <view class="label">我的收藏</view>
     </view>
   </view>

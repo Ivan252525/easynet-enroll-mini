@@ -8,7 +8,7 @@ Page({
     activityId: null,
     data: {
       activityInfo: {
-        mainImage: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578128612612&di=a301d8ee613f4f1e4e9bfd0b97c13129&imgtype=jpg&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D4073629333%2C1011902490%26fm%3D214%26gp%3D0.jpg",
+        banner: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578128612612&di=a301d8ee613f4f1e4e9bfd0b97c13129&imgtype=jpg&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D4073629333%2C1011902490%26fm%3D214%26gp%3D0.jpg",
         title: "喜茶蹦迪喜茶蹦迪喜茶蹦迪喜茶蹦迪喜茶蹦迪喜茶蹦迪喜茶蹦迪喜茶蹦迪",
         enrollNum: 1329,
         activityState: 2,
@@ -19,7 +19,7 @@ Page({
         address: "广东省开平市东汇村",
         phone: "12356748376",
         activityDetail: [
-          "https://hbimg.huabanimg.com/ebd46e1c3d1ac2ad60224cdbf6ff963b00f71acd142b7d-cNDuuC_fw658"
+        "https://hbimg.huabanimg.com/ebd46e1c3d1ac2ad60224cdbf6ff963b00f71acd142b7d-cNDuuC_fw658"
         ],
       },
       business: {

@@ -3,7 +3,7 @@ App({
   globalData: {
     version: "v0.0.3",
     // url: "https://www.weselfshop.cn/diary-mini"
-    url: "http://localhost:9090/neteasy-enroll-server"
+    url: "http://localhost:8023/enroll-server"
   },
   onLaunch: function () {
     // console.log('App Launch')

@@ -8,9 +8,27 @@ Page {
   border-radius: 10rpx;
 }
 
+.loginBtnWrapper {
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loginBtnWrapper button {
+  width: 240rpx;
+  height: 60rpx;
+  text-align: center;
+  font-size: 30rpx;
+  background-color: #fbe868;
+  border: 1rpx solid #fbe868;
+  border-radius: 50rpx;
+}
+
 .userInfo {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding-left: 90rpx;
   padding-top: 40rpx;
   padding-bottom: 40rpx;
