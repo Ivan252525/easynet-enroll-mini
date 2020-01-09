@@ -1,4 +1,4 @@
-// pages/business/business.js
+const app = getApp()
 Page({
 
   /**
@@ -8,81 +8,11 @@ Page({
     id: 0,
     data: {
       isLike : 0,
-      likeNum: 1200,
-      businessName: "喜茶喜茶",
-      logo: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578117350788&di=cf8bfe3a2baf71fa3b5b3418d80a9f97&imgtype=0&src=http%3A%2F%2Fd.ifengimg.com%2Fw600%2Fp0.ifengimg.com%2Fpmop%2F2018%2F0406%2FB6EBEFEB3603EE41D1AD687F6AFB01376C2B4C28_size19_w640_h640.jpeg",
-      about: "商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍",
+      likeNum: 0,
+      businessName: "",
+      logo: "",
+      about: "",
       activityList: [
-        {
-          id: 1,
-          mainImage: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3151958140,3815610019&fm=26&gp=0.jpg",
-          title: "喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶",
-          date: "02/15(周六)",
-          position: "蓬江区"
-        },
-        {
-          id: 2,
-          mainImage: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3151958140,3815610019&fm=26&gp=0.jpg",
-          title: "喜茶喜茶喜茶喜茶",
-          date: "02/15(周六)",
-          position: "蓬江区"
-        },
-        {
-          id: 3,
-          mainImage: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3151958140,3815610019&fm=26&gp=0.jpg",
-          title: "喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶",
-          date: "02/15(周六)",
-          position: "蓬江区"
-        },
-        {
-          id: 4,
-          mainImage: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3151958140,3815610019&fm=26&gp=0.jpg",
-          title: "喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶",
-          date: "02/15(周六)",
-          position: "蓬江区"
-        },
-        {
-          id: 3,
-          mainImage: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3151958140,3815610019&fm=26&gp=0.jpg",
-          title: "喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶",
-          date: "02/15(周六)",
-          position: "蓬江区"
-        },
-        {
-          id: 4,
-          mainImage: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3151958140,3815610019&fm=26&gp=0.jpg",
-          title: "喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶",
-          date: "02/15(周六)",
-          position: "蓬江区"
-        },
-        {
-          id: 3,
-          mainImage: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3151958140,3815610019&fm=26&gp=0.jpg",
-          title: "喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶",
-          date: "02/15(周六)",
-          position: "蓬江区"
-        },
-        {
-          id: 4,
-          mainImage: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3151958140,3815610019&fm=26&gp=0.jpg",
-          title: "喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶",
-          date: "02/15(周六)",
-          position: "蓬江区"
-        },
-        {
-          id: 3,
-          mainImage: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3151958140,3815610019&fm=26&gp=0.jpg",
-          title: "喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶",
-          date: "02/15(周六)",
-          position: "蓬江区"
-        },
-        {
-          id: 4,
-          mainImage: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3151958140,3815610019&fm=26&gp=0.jpg",
-          title: "喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶喜茶",
-          date: "02/15(周六)",
-          position: "蓬江区"
-        },
       ],
     }
   },
@@ -95,22 +25,30 @@ Page({
   },
 
   bindTapLike: function (e) {
-    let data = this.data.data;
-    if (this.data.data.isLike == 0) {
-      // 添加关注
-      data.isLike = 1;
-      data.likeNum = data.likeNum + 1;
-      this.setData({
-        data: data
-      })
-    } else {
-      // 取消关注
-      data.isLike = 0;
-      data.likeNum = data.likeNum - 1;
-      this.setData({
-        data: data
-      })
-    }
+    wx.showLoading({
+      title: "",
+    })
+    let _this = this
+    wx.request({
+      url: app.globalData.url + '/server/business/business/likeorremove/' + _this.data.id,
+      method: "POST",
+      header: {
+        'token': JSON.parse(wx.getStorageSync('session')).token
+      },
+      success(res) {
+        if (res.statusCode == 200 && res.data.code == 200) {
+          _this.getViewData()
+        } else {
+          wx.showModal({
+            title: '失败',
+            content: '请稍后再试',
+          })
+        }
+      },
+      complete() {
+        wx.hideLoading()
+      }
+    })
   },
 
   bindActivityTap: function (e) {
@@ -120,6 +58,30 @@ Page({
     })
   },
 
+  getViewData() {
+    let _this = this;
+
+    wx.request({
+      url: app.globalData.url + '/server/business/business/info/' + _this.data.id,
+      method: "GET",
+      header: {
+        'token': JSON.parse(wx.getStorageSync('session')).token
+      },
+      success(res) {
+        if (res.statusCode == 200 && res.data.code == 200) {
+          _this.setData({
+            data: res.data.data
+          })
+        } else {
+          wx.showModal({
+            title: '获取商家数据失败',
+            content: '获取商家数据失败',
+          })
+        }
+      }
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -127,7 +89,7 @@ Page({
     this.setData({
       id: options.id,
     })
-    console.log(this.data.id)
+    this.getViewData();
   },
 
   /**

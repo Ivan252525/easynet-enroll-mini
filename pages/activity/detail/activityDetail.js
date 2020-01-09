@@ -1,4 +1,4 @@
-// pages/activity/detail/activityDetail.js 
+const app = getApp()
 Page({
 
   /** 
@@ -8,25 +8,27 @@ Page({
     activityId: null,
     data: {
       activityInfo: {
-        banner: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578128612612&di=a301d8ee613f4f1e4e9bfd0b97c13129&imgtype=jpg&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D4073629333%2C1011902490%26fm%3D214%26gp%3D0.jpg",
-        title: "喜茶蹦迪喜茶蹦迪喜茶蹦迪喜茶蹦迪喜茶蹦迪喜茶蹦迪喜茶蹦迪喜茶蹦迪",
-        enrollNum: 1329,
+        banner: "",
+        title: "",
+        enrollNum: 0,
+        viewNum: 0,
         activityState: 2,
-        activityStateStr: "报名中",
-        activityTime: "01/05 12:00",
-        startTime: "01/02 12:00",
-        endTime: "02/02 11:00",
-        address: "广东省开平市东汇村",
-        phone: "12356748376",
+        activityStateStr: "",
+        activityTime: "",
+        startTime: "",
+        endTime: "",
+        address: "",
+        phone: "",
+        isEnroll: 0,
+        isCollect: 0,
         activityDetail: [
-        "https://hbimg.huabanimg.com/ebd46e1c3d1ac2ad60224cdbf6ff963b00f71acd142b7d-cNDuuC_fw658"
         ],
       },
       business: {
-        id: 1,
-        logo: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1578117350788&di=cf8bfe3a2baf71fa3b5b3418d80a9f97&imgtype=0&src=http%3A%2F%2Fd.ifengimg.com%2Fw600%2Fp0.ifengimg.com%2Fpmop%2F2018%2F0406%2FB6EBEFEB3603EE41D1AD687F6AFB01376C2B4C28_size19_w640_h640.jpeg",
-        businessName: "喜茶喜茶",
-        activityNum: 3,
+        id: null,
+        logo: "",
+        businessName: "",
+        activityNum: 0,
 
       }
     }
@@ -38,10 +40,89 @@ Page({
     })
   },
 
+  bindTapCollect: function () {
+    let _this = this;
+
+    wx.showLoading({
+      title: "",
+    })
+
+    wx.request({
+      url: app.globalData.url + '/server/activity/activity/collectorremove/' + _this.data.activityId,
+      method: "POST",
+      header: {
+        'token': JSON.parse(wx.getStorageSync('session')).token
+      },
+      success(res) {
+        if (res.statusCode == 200 && res.data.code == 200) {
+          _this.getViewData()
+        } else {
+          wx.showModal({
+            title: '失败',
+            content: '请稍后再试',
+          })
+        }
+      },
+      complete() {
+        wx.hideLoading()
+      }
+    })
+  },
+
   bindTapEnroll: function () {
+    if (this.data.data.activityInfo.isEnroll == 1) {
+      wx.showModal({
+        title: '你已经报过名啦～',
+        content: '可在 "我的" -> "我的报名" 中查看自己的报名信息',
+        showCancel: false
+      })
+      return
+    }
+    if (this.data.data.activityInfo.activityState == 1) {
+      wx.showModal({
+        title: '报名失败',
+        content: '活动尚未开始报名',
+        showCancel: false
+      })
+      return 
+    }
+    if (this.data.data.activityInfo.activityState == 3) {
+      wx.showModal({
+        title: '报名失败',
+        content: '活动已经结束报名',
+        showCancel: false
+      })
+      return
+    }
+
     wx.navigateTo({
       url: '../enroll/enroll?activityId=' + this.data.activityId,
     })
+  },
+
+  getViewData() {
+    let _this = this;
+
+    wx.request({
+      url: app.globalData.url + '/server/activity/activity/info/' + _this.data.activityId,
+      method: "GET",
+      header: {
+        'token': JSON.parse(wx.getStorageSync('session')).token
+      },
+      success(res) {
+        if (res.statusCode == 200 && res.data.code == 200) {
+          console.log(res.data.data)
+          _this.setData({
+            data: res.data.data
+          })
+        } else {
+          wx.showModal({
+            title: '获取活动数据失败',
+            content: '获取活动数据失败',
+          })
+        }
+      }
+    });
   },
 
   /** 
@@ -50,6 +131,63 @@ Page({
   onLoad: function (options) {
     this.setData({
       activityId: options.activityId
+    })
+  },
+
+  login: function () {
+    let _this = this;
+
+    // 检查是否存有session
+    let sessionStr = wx.getStorageSync('session')
+    if (sessionStr) {
+      console.log("session存在，检查token是否过期")
+      // 检查是否过期
+      let session = JSON.parse(wx.getStorageSync('session'));
+      let expireIn = session.expireIn;
+      let timestamp = Date.parse(new Date())
+      console.log("当前时间戳：", timestamp)
+      console.log("token过期时间：", expireIn)
+      if (timestamp >= expireIn) {
+        console.log("token已过期，重新登陆")
+        _this.wxLogin()
+        return
+      } else {
+        _this.getViewData()
+      }
+    } else {
+      // session不存在，调用微信登陆接口再向服务器登陆
+      console.log("session不存在");
+      _this.wxLogin()
+    }
+  },
+
+  wxLogin: function () {
+    console.log("调用微信登陆")
+    wx.login({
+      success(res) {
+        if (res.code) {
+          console.log("向服务器登陆，code：", res.code);
+          wx.request({
+            url: app.globalData.url + '/server/user/user/login/' + res.code,
+            method: 'POST',
+            success: function (res) {
+              if (res.statusCode == 200 && res.data.code == 200) {
+                console.log("服务器登陆成功，data：", res.data);
+                let session = res.data.data
+                wx.setStorageSync('session', JSON.stringify(session)) // 保存会话到缓存
+
+                _this.getViewData()
+              } else {
+                console.log('服务器登录失败:', res.data.desc)
+                return
+              }
+            }
+          })
+        } else {
+          console.log('wx.login调用失败：' + res.errMsg)
+          return
+        }
+      }
     })
   },
 
@@ -64,7 +202,7 @@ Page({
    * 生命周期函数--监听页面显示 
    */
   onShow: function () {
-
+    this.login();
   },
 
   /** 

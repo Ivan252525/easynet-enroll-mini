@@ -7,7 +7,7 @@
   <view class="infoWrapper">
     <view class="viewNum">
       <image src="../../../images/liulan.png" />
-      <view class="num">{{ data.activityInfo.enrollNum }}</view>
+      <view class="num">{{ data.activityInfo.viewNum }}</view>
     </view>
     <view class="stateStr {{ data.activityInfo.activityState == 1 ? 'wait' : (data.activityInfo.activityState == 2 ? 'success' : 'pass') }}">{{ data.activityInfo.activityStateStr }}</view>
   </view>
@@ -69,14 +69,14 @@
     </view>
     <view class="label">分享</view>
   </view>
-  <view class="sbtn">
+  <view class="sbtn" bindtap="bindTapCollect">
     <view class="icon"> 
-      <image src="../../../images/shoucang-dark.png"></image>
+      <image src="{{data.activityInfo.isCollect == 1 ? '../../../images/shoucang-light.png' : '../../../images/shoucang-dark.png'}}"></image>
     </view>
     <view class="label">收藏</view>
   </view>
-  <view class="lbtn" bindtap="bindTapEnroll">
-    <view>立即报名</view>
+  <view class="lbtn" bindtap="bindTapEnroll" style="{{data.activityInfo.isEnroll == 1 ? 'background-color: #aaa;' : (data.activityInfo.activityState == 1 ? 'background-color: #aaa;' : (data.activityInfo.activityState == 2 ? '' : 'background-color: #aaa;'))}}">
+    <view>{{data.activityInfo.isEnroll == 1 ? '已报名' : (data.activityInfo.activityState == 1 ? '即将开始' : (data.activityInfo.activityState == 2 ? '马上报名' : '报名结束'))}}</view>
   </view>
 </view>
 

@@ -2,6 +2,9 @@ radio {
   transform:scale(0.7);
   margin-right: 50rpx;
 }
+checkbox {
+  transform:scale(0.7);
+}
 
 
 .container {

@@ -1,59 +1,13 @@
-// pages/activity/enroll/enroll.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    activityId: null,
     data: {
       form: [
-        {
-          formItemId: 1,
-          type: 1,
-          label: "姓名",
-          must: 1,
-        },
-        {
-          formItemId: 2,
-          type: 1,
-          label: "年龄",
-          must: 0,
-        },
-        {
-          formItemId: 3,
-          type: 2,
-          label: "性别",
-          must: 1,
-          options: ["男", "女", "其他"]
-        },
-        {
-          formItemId: 7,
-          type: 2,
-          label: "性别",
-          must: 1,
-          options: ["男", "女", "其他"]
-        },
-        {
-          formItemId: 4,
-          type: 3,
-          label: "地区",
-          must: 1,
-          options: ["蓬江区", "江海区", "新会区", "开平市", "恩平市", "台山市", "鹤山市"]
-        },
-        {
-          formItemId: 5,
-          type: 3,
-          label: "地区",
-          must: 1,
-          options: ["蓬江区", "江海区", "新会区", "开平市", "恩平市", "台山市", "鹤山市"]
-        },
-        {
-          formItemId: 6,
-          type: 4,
-          label: "喜欢",
-          must: 1,
-          options: ["苹果", "草莓", "橙子", "香蕉", "火龙果", "梨子", "奇异果"]
-        },
       ]
     },
     selectIndex: {
@@ -135,8 +89,88 @@ Page({
       }
     }
 
-    wx.redirectTo({
-      url: '../success/success',
+    let inputItems = [];
+    for (let formItemId in inputData) {
+      inputItems.push({
+        "formItemId": formItemId,
+        "value": inputData[formItemId]
+      })
+    }
+    let postData = {
+      "activityId": this.data.activityId,
+      "formItems": inputItems
+    }
+
+    wx.showLoading({
+      title: "",
+    })
+
+    wx.request({
+      url: app.globalData.url + '/server/enroll/enroll/enroll',
+      method: "POST",
+      header: {
+        'token': JSON.parse(wx.getStorageSync('session')).token
+      },
+      data: postData,
+      success(res) {
+        if (res.statusCode == 200 && res.data.code == 200) {
+          wx.redirectTo({
+            url: '../success/success',
+          })
+        } else {
+          wx.showModal({
+            title: '失败',
+            content: '请稍后再试',
+          })
+        }
+      },
+      complete() {
+        wx.hideLoading()
+      }
+    })
+  },
+
+  getViewData() {
+    let _this = this;
+
+    wx.showLoading({
+      title: "",
+    })
+
+    wx.request({
+      url: app.globalData.url + '/server/activity/activity/form/' + _this.data.activityId,
+      method: "GET",
+      header: {
+        'token': JSON.parse(wx.getStorageSync('session')).token
+      },
+      success(res) {
+        if (res.statusCode == 200 && res.data.code == 200) {
+          let data = _this.data.data;
+          data.form = res.data.data;
+          _this.setData({
+            data: data,
+          })
+
+          let inputData = _this.data.inputData;
+          for (let i = 0; i < _this.data.data.form.length; i++) {
+            let formItem = _this.data.data.form[i];
+            if (formItem.type == 3) {
+              inputData[formItem.formItemId + ""] = formItem.options[0]
+            }
+          }
+          _this.setData({
+            inputData: inputData
+          })
+        } else {
+          wx.showModal({
+            title: '失败',
+            content: '请稍后再试',
+          })
+        }
+      },
+      complete() {
+        wx.hideLoading()
+      }
     })
   },
 
@@ -144,17 +178,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 如果表单中有picker类型的条目，把第一选项放到输入结果中
-    let inputData = this.data.inputData;
-    for (let i=0; i<this.data.data.form.length; i++) {
-      let formItem = this.data.data.form[i];
-      if (formItem.type == 3) {
-        inputData[formItem.formItemId + ""] = formItem.options[0]
-      }
-    }
     this.setData({
-      inputData: inputData
+      activityId: options.activityId
     })
+
+    this.getViewData();
   },
 
   /**
