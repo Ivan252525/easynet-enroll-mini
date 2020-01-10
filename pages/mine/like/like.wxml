@@ -1,5 +1,5 @@
 <view class="businessCard" 
-      wx:for="{{data.businessList}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="business"
+      wx:for="{{data}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="business"
       data-index="{{business.id}}"
       bindtap="bindTapBusiness">
   <image class="businessLogo" src="{{ business.logo }}"></image>

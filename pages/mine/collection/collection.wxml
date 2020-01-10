@@ -1,5 +1,5 @@
 <view class="activityList">
-  <view class="item" wx:for="{{data.activityList}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="activity"
+  <view class="item" wx:for="{{data}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="activity"
         data-index="{{ activity.id }}"
         bindtap="bindActivityTap">
     <image class="mainImage" src="{{ activity.mainImage }}"></image>

@@ -1,5 +1,5 @@
-<view class="card" wx:for="{{data.enrollList}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="enroll"
-      data-index="{{enroll.id}}"
+<view class="card" wx:for="{{data}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="enroll"
+      data-index="{{enroll.enrollId}}"
       bindtap="bindTapEnrollDetail">
   <view class="iconWrapper">
     <image class="logo" src="{{enroll.businessLogo}}"></image>
