@@ -96,10 +96,11 @@ Page {
   background-size: 20%;
 }
 .businessCard .businessLogo {
-  width: 160rpx;
-  height: 160rpx;
-  margin-left: 10rpx;
-  margin-right: 10rpx;
+  width: 150rpx;
+  height: 150rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
 }
 .businessCard .businessInfoWrapper .businessName {
   letter-spacing: 2rpx;
@@ -161,6 +162,12 @@ Page {
   box-shadow: 0rpx -10rpx 25rpx #ccc;
   display: flex;
   align-items: center;
+}
+.footer .sharebtn {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: #fff;
 }
 .footer .sbtn {
   width: 120rpx;

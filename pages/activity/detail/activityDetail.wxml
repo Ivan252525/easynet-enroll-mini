@@ -26,13 +26,13 @@
       <view>报名：{{data.activityInfo.startTime}} - {{data.activityInfo.endTime}}</view>
     </view>
     <view class="spliter"></view>
-    <view class="item">
+    <view class="item" wx:if="{{data.activityInfo.address}}">
       <image class="left" src="../../../images/didian.png" />
       <view>地点：{{ data.activityInfo.address }}</view>
       <image class="right" src="../../../images/you.png"></image>
     </view>
     <view class="spliter"></view>
-    <view class="item">
+    <view class="item" wx:if="{{data.activityInfo.phone}}" bindtap="bindPhoneCall">
       <image class="left" src="../../../images/dianhua.png" />
       <view>联系电话：{{ data.activityInfo.phone }}</view>
       <image class="right" src="../../../images/you.png"></image>
@@ -63,12 +63,12 @@
 </view>
 
 <view class="footer">
-  <view class="sbtn">
+  <button class="sbtn sharebtn" open-type="share">
     <view class="icon">
       <image src="../../../images/fenxiang.png"></image>
     </view>
     <view class="label">分享</view>
-  </view>
+  </button>
   <view class="sbtn" bindtap="bindTapCollect">
     <view class="icon"> 
       <image src="{{data.activityInfo.isCollect == 1 ? '../../../images/shoucang-light.png' : '../../../images/shoucang-dark.png'}}"></image>

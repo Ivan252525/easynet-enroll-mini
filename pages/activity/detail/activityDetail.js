@@ -100,6 +100,12 @@ Page({
     })
   },
 
+  bindPhoneCall: function () {
+    wx.makePhoneCall({
+      phoneNumber: this.data.data.activityInfo.phone,
+    })
+  },
+
   getViewData() {
     let _this = this;
 
@@ -237,6 +243,10 @@ Page({
    * 用户点击右上角分享 
    */
   onShareAppMessage: function () {
-
+    return {
+      title: this.data.data.activityInfo.title,
+      path: "/pages/activity/detail/activityDetail?activityId=" + this.data.activityId,
+      imageUrl: this.data.data.activityInfo.banner
+    }
   }
 })
