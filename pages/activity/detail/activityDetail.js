@@ -18,6 +18,8 @@ Page({
         startTime: "",
         endTime: "",
         address: "",
+        positionLatitude: "",
+        positionLongitude: "",
         phone: "",
         isEnroll: 0,
         isCollect: 0,
@@ -103,6 +105,20 @@ Page({
   bindPhoneCall: function () {
     wx.makePhoneCall({
       phoneNumber: this.data.data.activityInfo.phone,
+    })
+  },
+
+  bindOpenMap () {
+
+    if (!this.data.data.activityInfo.positionLatitude || !this.data.data.activityInfo.positionLongitude) {
+      return ;
+    }
+
+    wx.openLocation({
+      latitude: parseFloat(this.data.data.activityInfo.positionLatitude),
+      longitude: parseFloat(this.data.data.activityInfo.positionLongitude),
+      scale: 15,
+      name: this.data.data.activityInfo.address
     })
   },
 

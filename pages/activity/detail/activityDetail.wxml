@@ -26,10 +26,11 @@
       <view>报名：{{data.activityInfo.startTime}} - {{data.activityInfo.endTime}}</view>
     </view>
     <view class="spliter"></view>
-    <view class="item" wx:if="{{data.activityInfo.address}}">
+    <view class="item" wx:if="{{data.activityInfo.address}}" bindtap="bindOpenMap">
       <image class="left" src="../../../images/didian.png" />
       <view>地点：{{ data.activityInfo.address }}</view>
-      <image class="right" src="../../../images/you.png"></image>
+      <image class="right" src="../../../images/you.png"
+             wx:if="{{this.data.data.activityInfo.positionLatitude && this.data.data.activityInfo.positionLongitude}}"></image>
     </view>
     <view class="spliter"></view>
     <view class="item" wx:if="{{data.activityInfo.phone}}" bindtap="bindPhoneCall">
