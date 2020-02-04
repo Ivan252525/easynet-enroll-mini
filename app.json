@@ -12,7 +12,8 @@
     "pages/activity/success/success",
     "pages/mine/enrollDetail/enrollDetail",
     "pages/mine/enrollList/enrollList",
-    "pages/web/web"
+    "pages/web/web",
+    "pages/mine/userInfo/userInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",

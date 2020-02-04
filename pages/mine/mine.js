@@ -30,6 +30,11 @@ Page({
       url: '../mine/enrollList/enrollList',
     })
   },
+  tapUserInfo: function () {
+    wx.navigateTo({
+      url: 'userInfo/userInfo',
+    })
+  },
 
   bindGetUserInfo: function (e) {
     let _this = this
@@ -111,22 +116,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let session = JSON.parse(wx.getStorageSync('session'));
-    console.log(session)
-
-    let init = session.init;
-    let nickname = session.userInfo.nickname;
-    let userLogo = session.userInfo.userLogo;
-
-    this.setData({
-      init,
-      nickname,
-      userLogo
-    })
-
-    if (init) {
-      this.getUserData()
-    }
+    
   },
 
   /**
@@ -140,7 +130,35 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getUserData()
+    let _this = this
+
+    wx.getSetting({
+      success(res) {
+        console.log(res)
+        if (res.authSetting['scope.userInfo']) {
+          let session = JSON.parse(wx.getStorageSync('session'));
+          console.log(session)
+
+          let init = session.init;
+          let nickname = session.userInfo.nickname;
+          let userLogo = session.userInfo.userLogo;
+
+          _this.setData({
+            init,
+            nickname,
+            userLogo
+          })
+
+          if (init) {
+            _this.getUserData()
+          }
+        } else {
+          _this.setData({
+            init: false
+          })
+        }
+      }
+    })
   },
 
   /**

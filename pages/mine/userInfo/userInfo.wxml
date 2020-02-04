@@ -1,0 +1,24 @@
+<view class='logo'>
+  <image bindtap='bindTapLogo' src='{{userLogo}}'></image>
+</view>
+<view class='nickname'>
+  <view>{{nickname}}</view>
+  <image bindtap='showEditNickname' src='../../../images/edit.png'></image>
+</view>
+<view class='createTime'>注册时间：{{createTime}}</view>
+
+<view class='footer'>
+  <view class='tip'>*刚在微信修改昵称和头像需要等待一段时间后才能同步数据</view>
+  <button bindtap='syncUserInfo' class='sync'>同步头像和昵称</button>
+</view>
+
+<view class='mask' wx:if='{{showEditNicknamePop}}'>
+  <view class='pop'>
+    <view class='title'>请输入昵称</view>
+    <view class='inputWrapper'>
+      <input bindinput='bindInputNickname' value='{{tempNickname}}' class='input' focus='{{focus}}' adjust-position='false'></input>
+    </view>
+    <button bindtap='bindSaveEditNickname' class='save' style='background-color: {{savaButtonColor}};'>保存</button>
+    <view bindtap='hideEditNickname' class='cancel'>取消</view>
+  </view>
+</view>

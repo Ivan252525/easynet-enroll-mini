@@ -2,7 +2,7 @@
   <view class="loginBtnWrapper" wx:if="{{!init}}">
     <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">请登录</button>
   </view>
-  <view class="userInfo" wx:if="{{init}}">
+  <view class="userInfo" wx:if="{{init}}" bindtap="tapUserInfo">
     <image class="logo" src="{{userLogo}}"></image>
     <view class="username">{{nickname}}</view>
   </view>

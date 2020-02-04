@@ -1,0 +1,111 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 160rpx;
+}
+.logo image {
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5rpx solid #5F6776;
+}
+
+.nickname {
+  text-align: center;
+  font-size: 46rpx;
+  margin-top: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nickname image {
+  margin-left: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.createTime {
+  text-align: center;
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 30rpx;
+}
+
+.footer {
+  justify-content: center;
+  position: absolute;
+  bottom: 140rpx;
+  width: 750rpx;
+}
+.footer .tip {
+  margin-bottom: 10rpx;
+  color: #999;
+  font-size: 24rpx;
+  text-align: center;
+}
+.footer .sync {
+  width: 600rpx;
+  border-radius:25px;
+  color: white;
+  margin-bottom: 20rpx;
+  background-color: #55C58B;
+}
+
+
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background:rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+}
+.pop {
+  width: 600rpx;
+  height: 530rpx;
+  background-color: white;
+  border: 1rpx white solid;
+  border-radius:5px;
+  margin-top: 160rpx;
+  justify-content: center;
+}
+.pop .title {
+  margin-top: 60rpx;
+  /* width: 100%; */
+  text-align: center;
+  font-size: 48rpx;
+}
+.pop .inputWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 44rpx;
+  margin-top: 60rpx;
+}
+.pop .inputWrapper .input {
+  width: 400rpx;
+  border-bottom: 1rpx #eee solid;
+  line-height: 50rpx;
+  margin-right: 10rpx;
+  font-size: 44rpx;
+}
+.pop .save {
+  width: 400rpx;
+  height: 90rpx;
+  color: white;
+  border-radius:25px;
+  text-align: center;
+  align-items: center;
+  margin-top: 44rpx;
+  background-color: #55C58B;
+}
+.pop .cancel {
+  font-size: 28rpx;
+  width: 100%;
+  text-align: center;
+  margin-top: 25rpx;
+}
