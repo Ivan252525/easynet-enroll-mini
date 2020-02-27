@@ -39,7 +39,7 @@
   margin-bottom: 30rpx;
 }
 .btnWrapper .viewBtn {
-  width: 300rpx;
+  width: 450rpx;
   padding-top: 20rpx;
   padding-bottom: 20rpx;
   text-align: center;
@@ -48,7 +48,7 @@
   border-radius: 50rpx;
 }
 .btnWrapper .cancelBtn {
-  width: 300rpx;
+  width: 450rpx;
   padding-top: 20rpx;
   padding-bottom: 20rpx;
   text-align: center;

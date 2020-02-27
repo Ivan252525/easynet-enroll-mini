@@ -1,0 +1,23 @@
+<view class="card" wx:for="{{data}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="activity"
+      data-index="{{activity.activityId}}">
+  <view class="iconWrapper">
+    <image class="logo" src="{{activity.mainImage}}"></image>
+    <view class="titleWrapper">
+      <view class="title">{{activity.title}}</view>
+      <view class="infoWrapper">
+        <view class="date">{{activity.date}}</view>
+        <view class="potision">{{activity.position}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="checkWrapper">
+    <view class="item">
+      <view class="value">1329</view>
+      <view class="label">已报名</view>
+    </view>
+    <view class="item">
+      <view class="value">983</view>
+      <view class="label">已核销</view>
+    </view>
+  </view>
+</view>

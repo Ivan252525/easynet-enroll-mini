@@ -13,7 +13,8 @@
     "pages/mine/enrollDetail/enrollDetail",
     "pages/mine/enrollList/enrollList",
     "pages/web/web",
-    "pages/mine/userInfo/userInfo"
+    "pages/mine/userInfo/userInfo",
+    "pages/check/list/chekActivityList"
   ],
   "window": {
     "backgroundTextStyle": "light",

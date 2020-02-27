@@ -5,7 +5,7 @@
   <view>{{nickname}}</view>
   <image bindtap='showEditNickname' src='../../../images/edit.png'></image>
 </view>
-<view class='createTime'>注册时间：{{createTime}}</view>
+<view class='createTime'>用户ID：{{userCode}}</view>
 
 <view class='footer'>
   <view class='tip'>*刚在微信修改昵称和头像需要等待一段时间后才能同步数据</view>

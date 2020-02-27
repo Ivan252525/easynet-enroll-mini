@@ -19,7 +19,7 @@
   </view>
 </view>
 
-<view style="height: 80rpx;"></view>
+<view style="height: 40rpx;"></view>
 
 <view class="container">
   <view class="tapItem" bindtap="tapEnrollList">
@@ -29,6 +29,18 @@
   <view class="tapItemSpliter"></view>
   <view class="tapItem">
     <view class="label">联系客服</view>
+    <image class="arrowIcon" src="../../images/you.png"></image>
+  </view>
+</view>
+
+<view class="container">
+  <view class="tapItem" bindtap="tapCheckActivityList">
+    <view class="label">我核销的活动</view>
+    <image class="arrowIcon" src="../../images/you.png"></image>
+  </view>
+  <view class="tapItemSpliter"></view>
+  <view class="tapItem" bindtap="scanQr">
+    <view class="label">扫一扫</view>
     <image class="arrowIcon" src="../../images/you.png"></image>
   </view>
 </view>

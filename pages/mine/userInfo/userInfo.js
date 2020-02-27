@@ -8,6 +8,7 @@ Page({
     nickname: "",
     userLogo: "",
     createTime: "",
+    userCode: "",
     savaButtonColor: '#9FE0C8'
   },
 
@@ -136,11 +137,13 @@ Page({
     let nickname = session.userInfo.nickname;
     let userLogo = session.userInfo.userLogo;
     let createTime = session.userInfo.createTime;
+    let userCode = session.userInfo.userCode
 
     this.setData({
       nickname,
       userLogo,
       createTime,
+      userCode,
       tempNickname: nickname,
     })
   },

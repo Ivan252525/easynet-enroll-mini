@@ -1,6 +1,5 @@
 <view class="card" wx:for="{{data}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="enroll"
-      data-index="{{enroll.enrollId}}"
-      bindtap="bindTapEnrollDetail">
+      >
   <view class="iconWrapper">
     <image class="logo" src="{{enroll.businessLogo}}"></image>
     <view class="titleWrapper">
@@ -11,7 +10,16 @@
       </view>
     </view>
   </view>
-  <view class="enrollTime">报名时间：{{enroll.enrollTime}}</view>
+  <view class="checkWrapper">
+    <view class="enrollTime">报名时间：{{enroll.enrollTime}}</view>
+    <view class="checkState" style="{{enroll.checkState == 0 ? '' : 'color:#aaa'}}">{{enroll.checkState == 0 ? '未核销' : '已核销'}}</view>
+  </view>
+  <view class="spliter"></view>
+  <view class="btnWtapper">
+    <view class="btn viewDetailBtn" data-index="{{enroll.enrollId}}"
+      bindtap="bindTapEnrollDetail">详情</view>
+    <view class="btn viewQrBtn" data-index="{{enroll.enrollId}}">核销码</view>
+  </view>
 </view>
 
 <view class="height: 80rpx"></view>

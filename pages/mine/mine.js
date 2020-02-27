@@ -35,6 +35,11 @@ Page({
       url: 'userInfo/userInfo',
     })
   },
+  tapCheckActivityList: function () {
+    wx.navigateTo({
+      url: '../check/list/chekActivityList',
+    })
+  },
 
   bindGetUserInfo: function (e) {
     let _this = this
@@ -45,7 +50,7 @@ Page({
       })
 
       let userData = JSON.parse(e.detail.rawData);
-      console.log(userData)
+      // console.log(userData)
 
       wx.request({
         url: app.globalData.url + '/server/user/user/init',
@@ -59,7 +64,7 @@ Page({
           sex: userData.gender
         },
         success(res) {
-          console.log(res)
+          // console.log(res)
           if (res.statusCode == 200 && res.data.code == 200) {
             let session = res.data.data
             wx.setStorageSync('session', JSON.stringify(session)) // 保存会话到缓存
@@ -96,7 +101,7 @@ Page({
         'token': JSON.parse(wx.getStorageSync('session')).token
       },
       success(res) {
-        console.log(res)
+        // console.log(res)
         if (res.statusCode == 200 && res.data.code == 200) {
           _this.setData({
             data: res.data.data,
@@ -108,6 +113,18 @@ Page({
           })
           return
         }
+      }
+    })
+  },
+
+  scanQr() {
+    wx.scanCode({
+      success(res) {
+        console.log(res)
+        let qrText = res.result
+      },
+      fail(res) {
+        console.log(res)
       }
     })
   },
@@ -134,10 +151,10 @@ Page({
 
     wx.getSetting({
       success(res) {
-        console.log(res)
+        // console.log(res)
         if (res.authSetting['scope.userInfo']) {
           let session = JSON.parse(wx.getStorageSync('session'));
-          console.log(session)
+          // console.log(session)
 
           let init = session.init;
           let nickname = session.userInfo.nickname;
