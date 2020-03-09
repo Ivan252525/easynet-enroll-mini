@@ -14,7 +14,9 @@
     "pages/mine/enrollList/enrollList",
     "pages/web/web",
     "pages/mine/userInfo/userInfo",
-    "pages/check/list/chekActivityList"
+    "pages/check/list/chekActivityList",
+    "pages/mine/checkCode/checkCode",
+    "pages/check/result/result"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,28 +1,21 @@
 const app = getApp()
+var qrcode = require('../../../weapp.qrcode.min.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    data: [
-    ]
-  },
-
-  bindTapEnrollDetail: function (e) {
-    let enrollId = e.currentTarget.dataset.index;
-    console.log(enrollId)
-    wx.navigateTo({
-      url: '../enrollDetail/enrollDetail?id=' + enrollId,
-    })
-  },
-
-  bindTapCheckCode: function (e) {
-    let enrollId = e.currentTarget.dataset.index;
-    console.log(enrollId)
-    wx.navigateTo({
-      url: '../checkCode/checkCode?id=' + enrollId,
-    })
+    data: {
+      businessLogo: "http://img4.imgtn.bdimg.com/it/u=2974438632,2797102034&fm=26&gp=0.jpg",
+      activityTitle: "活动名活动名活动名活动名活动名活动名",
+      checkCode: "1234567899",
+      checkCodePart1: "123",
+      checkCodePart2: "456",
+      checkCodePart3: "7899",
+      checkState: 1,
+      checkTime: '2020-01-02 12:33'
+    }
   },
 
   getViewData() {
@@ -33,7 +26,7 @@ Page({
     })
 
     wx.request({
-      url: app.globalData.url + '/server/enroll/enroll/list',
+      url: app.globalData.url + '/server/enroll/enroll/checkcode/' + _this.data.enrollId,
       method: "GET",
       header: {
         'token': JSON.parse(wx.getStorageSync('session')).token
@@ -43,6 +36,15 @@ Page({
           let data = res.data.data;
           _this.setData({
             data: data
+          })
+          qrcode({
+            width: 170,
+            height: 170,
+            canvasId: "checkCodeQr",
+            text: _this.data.data.checkCode,
+            callback: function () {
+
+            }
           })
         } else {
           wx.showModal({
@@ -61,7 +63,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      enrollId: options.id,
+    })
+    this.getViewData()
   },
 
   /**
@@ -75,7 +80,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getViewData();
+
   },
 
   /**

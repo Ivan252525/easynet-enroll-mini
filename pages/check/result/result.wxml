@@ -1,0 +1,14 @@
+<view class="rq">
+  <view class="success">
+    <image src="../../../images/chenggong.png"></image>
+    <view>核销成功</view>
+  </view>
+  
+  <view class="plane">  
+    <view class="title">———— 用户报名信息 ————</view>
+    <view class="item" wx:for="{{data.inputItems}}" wx:key="key" wx:for-key="{{index}}" wx:for-item="inputItem">
+      <view class="label">{{inputItem.label}}</view>
+      <view class="value">{{inputItem.value}}</view>
+    </view>
+  </view>
+</view>

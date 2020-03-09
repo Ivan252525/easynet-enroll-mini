@@ -1,4 +1,4 @@
-// pages/check/list/chekActivityList.js
+const app = getApp()
 Page({
 
   /**
@@ -6,14 +6,39 @@ Page({
    */
   data: {
     data: [
-      {
-        activityId: 10,
-        mainImage: "https://www.weselfshop.cn/enroll-image/94a9384d73cc4312bc3c5400ec61de34.jpg",
-        title: "上岛咖啡我那佛的法律就为了金额反季节上的法律文件发",
-        date: "01/23(周四)",
-        position: "蓬江区"
-      }
     ]
+  },
+
+  getViewData() {
+    let _this = this;
+
+    wx.showLoading({
+      title: "",
+    })
+
+    wx.request({
+      url: app.globalData.url + '/server/activity/activity/check/list',
+      method: "GET",
+      header: {
+        'token': JSON.parse(wx.getStorageSync('session')).token
+      },
+      success(res) {
+        if (res.statusCode == 200 && res.data.code == 200) {
+          let data = res.data.data;
+          _this.setData({
+            data: data
+          })
+        } else {
+          wx.showModal({
+            title: '失败',
+            content: '请稍后再试',
+          })
+        }
+      },
+      complete() {
+        wx.hideLoading()
+      }
+    })
   },
 
   /**
@@ -34,7 +59,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getViewData()
   },
 
   /**

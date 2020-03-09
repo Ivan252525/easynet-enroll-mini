@@ -18,7 +18,8 @@
   <view class="btnWtapper">
     <view class="btn viewDetailBtn" data-index="{{enroll.enrollId}}"
       bindtap="bindTapEnrollDetail">详情</view>
-    <view class="btn viewQrBtn" data-index="{{enroll.enrollId}}">核销码</view>
+    <view class="btn viewQrBtn" data-index="{{enroll.enrollId}}"
+      bindtap="bindTapCheckCode">核销码</view>
   </view>
 </view>
 

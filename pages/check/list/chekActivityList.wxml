@@ -12,11 +12,11 @@
   </view>
   <view class="checkWrapper">
     <view class="item">
-      <view class="value">1329</view>
+      <view class="value">{{activity.enrollCount}}</view>
       <view class="label">已报名</view>
     </view>
     <view class="item">
-      <view class="value">983</view>
+      <view class="value">{{activity.checkCount}}</view>
       <view class="label">已核销</view>
     </view>
   </view>

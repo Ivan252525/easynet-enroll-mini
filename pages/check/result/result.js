@@ -5,36 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-    data: [
-    ]
+    checkCode: null,
+    data: {
+      inputItems: [
+      ]
+    }
   },
 
-  bindTapEnrollDetail: function (e) {
-    let enrollId = e.currentTarget.dataset.index;
-    console.log(enrollId)
-    wx.navigateTo({
-      url: '../enrollDetail/enrollDetail?id=' + enrollId,
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.setData({
+      checkCode: options.checkCode
     })
-  },
-
-  bindTapCheckCode: function (e) {
-    let enrollId = e.currentTarget.dataset.index;
-    console.log(enrollId)
-    wx.navigateTo({
-      url: '../checkCode/checkCode?id=' + enrollId,
-    })
-  },
-
-  getViewData() {
-    let _this = this;
 
     wx.showLoading({
-      title: "",
+      title: '加载中',
     })
 
+    let _this = this
     wx.request({
-      url: app.globalData.url + '/server/enroll/enroll/list',
-      method: "GET",
+      url: app.globalData.url + '/server/enroll/enroll/check/' + this.data.checkCode,
+      method: "POST",
       header: {
         'token': JSON.parse(wx.getStorageSync('session')).token
       },
@@ -44,10 +37,17 @@ Page({
           _this.setData({
             data: data
           })
+          wx.hideLoading()
         } else {
+          wx.hideLoading()
           wx.showModal({
             title: '失败',
-            content: '请稍后再试',
+            content: res.data.desc,
+            success(res) {
+              wx.navigateBack({
+                
+              })
+            }
           })
         }
       },
@@ -55,13 +55,6 @@ Page({
         wx.hideLoading()
       }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    
   },
 
   /**
@@ -75,7 +68,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getViewData();
+
   },
 
   /**

@@ -33,7 +33,7 @@
   </view>
 </view>
 
-<view class="container">
+<view class="container" wx:if="{{data.showCheck == 1}}" >
   <view class="tapItem" bindtap="tapCheckActivityList">
     <view class="label">我核销的活动</view>
     <image class="arrowIcon" src="../../images/you.png"></image>

@@ -11,7 +11,8 @@ Page({
     userLogo: "",
     data: {
       likeNum: 0,
-      collectNum: 0
+      collectNum: 0,
+      showCheck: 0
     }
   },
 
@@ -118,13 +119,25 @@ Page({
   },
 
   scanQr() {
+    // wx.navigateTo({
+    //   url: '../check/result/result?checkCode=123',
+    // })
+    // return ;
+
+    let _this = this
     wx.scanCode({
       success(res) {
         console.log(res)
         let qrText = res.result
+        wx.navigateTo({
+          url: '../check/result/result?checkCode=' + qrText,
+        })
       },
       fail(res) {
-        console.log(res)
+        wx.showModal({
+          title: '失败',
+          content: '无法识别二维码',
+        })
       }
     })
   },

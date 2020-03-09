@@ -1,0 +1,13 @@
+
+<view class="plane">
+  <image class="logo" src="{{data.businessLogo}}"></image>
+  <view class="title">{{data.activityTitle}}</view>
+  <canvas class="qrcode" canvas-id="checkCodeQr"></canvas>
+  <view class="checkCode">
+    <view>{{data.checkCodePart1}}</view>
+    <view>{{data.checkCodePart2}}</view>
+    <view>{{data.checkCodePart3}}</view>
+  </view>
+  <view class="checkState">核销状态：<text>{{data.checkState == 0 ? '未核销' : '已核销'}}</text></view>
+  <view class="checkTime">核销时间：<text>{{data.checkTime ? data.checkTime : '---'}}</text></view>
+</view>

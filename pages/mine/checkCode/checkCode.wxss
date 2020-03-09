@@ -1,0 +1,49 @@
+.plane {
+  width: 690rpx;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  background-color: white;
+  border-radius: 20rpx;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 30rpx;
+}
+.plane .logo {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 30rpx;
+}
+.plane .title {
+  margin: auto;
+  width: 420rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.plane .checkCode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #55C58B;
+  margin-top: 30rpx;
+  font-size: 40rpx;
+  letter-spacing: 2rpx;
+}
+.plane .checkCode view {
+  margin: 10rpx;
+}
+
+.plane .checkState {
+  margin-top: 100rpx;
+}
+.plane .checkTime {
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+
+.qrcode {
+  width: 340rpx;
+  height: 340rpx;
+  margin: 0 auto;
+  margin-top: 60rpx
+}

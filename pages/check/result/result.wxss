@@ -1,0 +1,38 @@
+.success {
+  justify-content: center;
+  text-align: center;
+  padding-top: 100rpx;
+}
+.success image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.plane {
+  margin: 20rpx;
+  width: 710rpx;
+  /* background-color: white; */
+  margin-top: 125rpx;
+  border-radius: 15rpx;
+  padding-top: 50rpx;
+  padding-bottom: 30rpx;
+}
+.plane .title {
+  text-align: center;
+  color: gray;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+.plane .item {
+  height: 100rpx;
+  width: 710rpx;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  color: #515151;
+  padding-left: 20rpx;
+}
+.plane .item .value {
+  position: absolute;
+  right: 40rpx;
+}
